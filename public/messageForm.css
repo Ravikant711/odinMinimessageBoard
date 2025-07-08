@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-text-color: #10002b;
+  --secondary-text-color: #240046;
+  --background-color: #933adb;
+  --border-color: #9d4edd;
+}
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.container {
+  height: fit-content;
+  width: 100%;
+  margin: 0 20px;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container a {
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--background-color);
+}
+
+.container a > span {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.form__container {
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form__container h2 {
+  font-size: 28px;
+  color: var(--primary-text-color);
+}
+
+.form__container > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__container label {
+  margin: 4px 0;
+  font-size: 18px;
+  color: var(--secondary-text-color);
+}
+
+.form__container input, 
+.form__container textarea {
+  border: 2px solid #9d4edd;
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+.form__container input[type=text]:focus-visible, 
+.form__container textarea:focus-visible {
+  outline: 2px solid var(--border-color);
+  background-color: #e9f3ff;
+}
+
+.form__container textarea {
+  min-height: 180px;
+  max-width: 550px;
+  width: 100%;
+}
+
+.form__container .submit__btn {
+  padding: 12px 16px;
+  text-decoration: none;
+  background-color: var(--background-color);
+  color: #f8f9fa;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  border: 2px solid var(--border-color);
+  margin: 4px 0;
+}
+
+.form__container .submit__btn:hover {
+  background-color: #7d28c2;
+}
