@@ -6,7 +6,7 @@ async function getMessagesBoard(req, res) {
     const messages = await db.getAllmessages();
     // console.log(messages, 'Checking messages')
     res.render('index', {title: "Welcome to mini message board", messages: messages});
-  } catch (error) {
+  } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
   }
