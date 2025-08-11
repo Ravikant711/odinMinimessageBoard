@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { messages } = require('./index.js')
+const { messages } = require('./messageRouter.js')
 
 router.get('/new', (req, res) => {
   res.render('messageForm');

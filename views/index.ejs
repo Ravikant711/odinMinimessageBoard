@@ -13,18 +13,22 @@
       <a href="/new">Add new message</a>
     </div>
     <div class="messages">
-      <% messages.forEach((item) => {%>
-        <div class="wrapper__container">
-          <div class="author__date__time">
-            <h4><%= item.user %></h4>
-            <p><%= item.added %></p>
+      <% if (locals.messages.length === 0) { %>
+        <p>No usernames found</p>
+      <% } else { %>
+        <% messages.forEach((item) => {%>
+          <div class="wrapper__container">
+            <div class="author__date__time">
+              <h4><%= item.username %></h4>
+              <p><%= item.added %></p>
+            </div>
+            <div class="message__open__btn">
+              <p><%= item.text %></p>
+              <a href="/message/<%= item.id %>"> Open </a>
+            </div>
           </div>
-          <div class="message__open__btn">
-            <p><%= item.text %></p>
-            <a href="/message/<%= item.id %>"> Open </a>
-          </div>
-        </div>
-      <% }); %>
+        <% }); %>
+      <%}%>
     </div>
   </div>
 </body>
