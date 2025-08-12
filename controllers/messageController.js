@@ -4,7 +4,7 @@ async function getMessagesBoard(req, res) {
   try {
     //getting messages from getAllmessages()
     const messages = await db.getAllmessages();
-    // console.log(messages, 'Checking messages')
+    
     res.render('index', {title: "Welcome to mini message board", messages: messages});
   } catch (err) {
     console.error(err.message);
@@ -35,10 +35,8 @@ function newMessageForm(req, res) {
 async function openNewMesasge(req, res) {
   try {
     const messageId = req.params.id;
-    // console.log(typeof(messageId), 'type of messageId')
     const openMessage = await db.findMessage(Number(messageId));
     
-    console.log(openMessage, 'lets see openMesage')
     if (!openMessage) {
       res.status(404).send('Message is not found');
     }
